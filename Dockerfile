@@ -6,9 +6,9 @@ ENV pip_packages "ansible"
 
 RUN mkdir -p /etc/apk &&\
 # Add the main repo
-    echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" > /etc/apk/repositories &&\
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories &&\
 # Add the community repo
-    echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/community" >> /etc/apk/repositories &&\
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories &&\
     cat /etc/apk/repositories &&\
 # Install OpenRC
     apk -U upgrade && apk add openrc python3 py3-pip python3-dev sudo gcc musl-dev libffi-dev libressl-dev &&\
