@@ -1,6 +1,6 @@
-# Alpine 3.12 Ansible Test Image
+# Alpine Edge Ansible Test Image
 
-Alpine 3.12 Docker container for Ansible playbook and role testing.
+Alpine Edge Docker container for Ansible playbook and role testing.
 
 ## Tags
 
@@ -14,13 +14,13 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. `cd` into this directory.
-  3. Run `docker build -t alpine312-ansible .`
+  3. Run `docker build -t alpine-edge-ansible .`
 
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
-  2. Pull this image from Docker Hub: `docker pull fourstepper/docker-alpine312-ansible` (or use the image you built earlier, e.g. `alpine312-ansible:latest`).
-  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro fourstepper/docker-alpine312-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
+  2. Pull this image from Docker Hub: `docker pull fourstepper/docker-alpine-edge-ansible` (or use the image you built earlier, e.g. `alpine-edge-ansible:latest`).
+  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro fourstepper/docker-alpine-edge-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
   4. Use Ansible inside the container:
     a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
     b. `docker exec --tty [container_id] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml --syntax-check`
